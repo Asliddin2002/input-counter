@@ -1,12 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Inputs from './components/InputField';
+import { QueryClientProvider, QueryClient } from 'react-query';
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div className="App">
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
       <Inputs/>
+      {/* <h2>Login Form</h2>
+      <form>
+          <input onChange={(e:React.ChangeEventHandler<HTMLInputElement>) => setPhone(e.target.value)} 
+          type="number" 
+          name = "mobile" 
+          placeholder='Mobile number' 
+          required />
+          <button type='submit'>Submit</button>
+      </form>
+      <h2>Enter the code</h2>
+      <form>
+      <input onChange={(e) => setCode(e.target.value) 
+      type="number" 
+      name = "otp" 
+      placeholder='enter the code' 
+      required />
+          <button type='submit'>Submit</button>
+      </form> */}
     </div>
+    </QueryClientProvider>
+    
   );
 }
 
