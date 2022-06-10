@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Inputs from './components/InputField';
+// import Inputs from './components/InputField';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import InputControl from './Input';
+import Input from './RealProject/Input';
+
+
 
 const queryClient = new QueryClient()
 
@@ -9,7 +13,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-      <Inputs/>
+      {/* <Inputs/> */}
+      <Input/>
+      {/* <InputControl/> */}
       {/* <h2>Login Form</h2>
       <form>
           <input onChange={(e:React.ChangeEventHandler<HTMLInputElement>) => setPhone(e.target.value)} 
